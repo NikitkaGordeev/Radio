@@ -1,11 +1,15 @@
 package ru.netology.stats;
 
 public class Radio {
-    public int currentStation;
-
+    private int currentStation;
+    private int currentVolume;
 
     public int getCurrentStation() {
         return currentStation;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 
     public void setCurrentStation(int newCurrentStation) { // минимум и максимум радиостанций
@@ -16,6 +20,16 @@ public class Radio {
             return;
         }
         currentStation = newCurrentStation;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) { // минимум и максимум громкости
+        if (newCurrentVolume < 0) {
+            newCurrentVolume = 0;
+        }
+        if (newCurrentVolume > 100) {
+            newCurrentVolume = 100;
+        }
+        currentVolume = newCurrentVolume;
     }
 
     public int nextStation() { // следующая радиостанция
@@ -34,22 +48,6 @@ public class Radio {
         }
     }
 
-    public int currentVolume;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int newCurrentVolume) { // минимум и максимум громкости
-        if (newCurrentVolume < 0) {
-            newCurrentVolume = 0;
-        }
-        if (newCurrentVolume > 100) {
-            newCurrentVolume = 100;
-        }
-        currentVolume = newCurrentVolume;
-    }
-
     public int moreVolume() { // увеличение громкости
         if (currentVolume >= 100) {
             return currentVolume = 100;
@@ -65,6 +63,5 @@ public class Radio {
             return currentVolume--;
         }
     }
-
 }
 

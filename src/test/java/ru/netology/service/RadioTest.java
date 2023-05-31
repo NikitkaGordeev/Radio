@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import ru.netology.stats.Radio;
 
 
-
 class RadioTest {
     // Радиостанции
     @Test
