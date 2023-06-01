@@ -7,12 +7,14 @@ import ru.netology.stats.Radio;
 
 class RadioTest {
     Radio radio = new Radio();
+
     // Радиостанции
     @Test
     public void defaultRadioStation() {
-        Radio radio = new Radio(1);
-        Assertions.assertEquals(1, radio.getAllStation());
-        Assertions.assertEquals(9, radio.getMaxRadioStation());
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(15);
+        Assertions.assertEquals(15, radio.getCurrentStation());
+        Assertions.assertEquals(20, radio.getMaxRadioStation());
         Assertions.assertEquals(0, radio.getMinRadioStation());
         Assertions.assertEquals(100, radio.getMaxVolume());
         Assertions.assertEquals(0, radio.getMinVolume());
